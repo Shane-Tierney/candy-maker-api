@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint --format stylish .",
     "lint:fix": "./node_modules/.bin/eslint --fix --format stylish .",
-    "dev": "nodemon index.js"
+    "dev": "env-cmd nodemon index.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./configs/sequelize.js"
   },
   "repository": {
     "type": "git",
